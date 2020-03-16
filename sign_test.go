@@ -14,6 +14,6 @@ func TestGetRequestSign(t *testing.T) {
 	values.Add("nonce_str", "teststr")
 	values.Add("session", "10000")
 	values.Add("question", "在吗？")
-	sig := GetRequestSign(values, "dfasfdawerfdafsewr")
+	sig := GetRequestSign(&values, "dfasfdawerfdafsewr")
 	assert.Equal(t, "F2CA996B5D10200B6DCE144DF2B4D452", sig, "Sign result")
 }

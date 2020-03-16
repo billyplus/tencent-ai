@@ -12,7 +12,7 @@ var (
 	signer = md5.New()
 )
 
-func GetRequestSign(value url.Values, key string) string {
+func GetRequestSign(value *url.Values, key string) string {
 	signer.Reset()
 	io.WriteString(signer, value.Encode())
 	io.WriteString(signer, "&app_key=")
